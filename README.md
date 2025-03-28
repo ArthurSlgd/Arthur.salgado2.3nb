@@ -1,4 +1,3 @@
-# Arthur.salgado2.3nb
 package br.com.fecaf.controller;
 import br.com.fecaf.model.Circulo;
 import br.com.fecaf.model.Retangulo;
@@ -163,7 +162,9 @@ public class Menu {
                         System.out.println("/* 2 - Calcular Area     */");
                         System.out.println("/* 3 -Calcular Perimetro */");
                         System.out.println("/* 4 - Definir Triângulo */");
-                        System.out.println("*/ 5 - Sair              */");
+                        System.out.println("/* 5 - Definir Triângulo Retângulo */");
+                        System.out.println("/* 6 - Definir Triângulo 3-4-5  */");
+                        System.out.println("*/ 7 - Sair              */");
                         System.out.println("/*************************/");
 
                         System.out.print("Escolha uma opção: ");
@@ -173,7 +174,7 @@ public class Menu {
                         switch (optionTriangulo) {
                             case 1:
                                 System.out.println("/*************************/");
-                                System.out.println("/* Cadastrando Retângulo */");
+                                System.out.println("/* Cadastrando Triângulo */");
                                 System.out.println("/*************************/");
                                 validaTriangulo = triangulo.cadastrarTriangulo();
                                 System.out.println("/*************************/");
@@ -201,6 +202,29 @@ public class Menu {
                                 }
                                 break;
                             case 5:
+                                if (validaTriangulo) {
+                                    if (triangulo.ehTrianguloRetangulo()) {
+                                        System.out.println("O triângulo é retângulo PORRA");
+                                    } else {
+                                        System.out.println("O triângulo não é retângulo PORRA");
+                                    }
+                                } else {
+                                    System.out.println("Cadastre um Triângulo primeiro");
+                                }
+                                break;
+                            case 6:
+                                System.out.println("/* Verificando se é '3-4-5' */");
+                                if (validaTriangulo) {
+                                    if (triangulo.ehTriangulo345()) {
+                                        System.out.println("O triângulo ta no método 3-4-5");
+                                    } else {
+                                        System.out.println("O triângulo NÃO ta no método 3-4-5.");
+                                    }
+                                } else {
+                                    System.out.println("Cadastre um Triângulo primeiro...");
+                                }
+                                break;
+                            case 7:
                                 System.out.println("Saindo...");
                                 exitTriangulo = true;
                                 break;
@@ -221,4 +245,3 @@ public class Menu {
         }
     }
 }
-
